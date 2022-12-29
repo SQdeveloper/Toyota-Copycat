@@ -1,0 +1,24 @@
+.header {
+    @include flex(space-between, center, row);
+    padding: 0 3.8em 0 3em;
+    height: 4em;
+    font-size: 1em;
+    font-weight: bold;
+
+    &__logo {
+        transform: scale(1.4)
+    }
+
+    &__ul {
+        @include flex(center, center, row); 
+        gap: 3em;
+    }
+
+    &__item {
+        letter-spacing: 2px;
+        &-svg {
+            width: 33px;
+            height: 33px;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+.home {
+    height: calc(100vh - 4em);
+
+    &__slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        // background-color: lightblue;
+        overflow-X: hidden;
+
+        &__sliderMove {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transform: translateX(calc(-100%/3));
+            transition: transform .6s;
+
+            &__item {
+                width: calc(100%/3);
+                height: 100%;
+                @include flex(space-between, center, column);
+
+                video {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        &__info {
+            position: absolute;
+            color: white;
+            bottom: 2em;
+            line-height: 33px;
+            text-align: center;
+
+            &-title {
+                font-size: 1.8em;
+            }
+        }
+        &__enlaces {
+            @include flex(center, center, row);
+            gap: 1em;
+            margin-top: .6em;
+
+            &-enlace {
+                color: black;
+                background-color: white;
+                padding: .2em 1.5em;
+                border-radius: 2em;
+                font-weight: bold;
+            }
+        }
+        
+        &__ContText {
+            position: absolute;
+            top: 0;
+            color: white;
+            text-align: center;
+        }
+        &__title {
+            font-size: 3.5em;
+        }
+        &__enlace {
+            position: absolute;
+            bottom: 2em;
+            color: white;
+            padding: .5em 1em;
+            border: 2px solid white;
+            border-radius: 2em;
+            font-weight: bold;
+        }
+    }
+
+    &__button {
+        width: 60px;
+        height: 60px;
+        background-color: black;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+
+        &_left  { left:  4em;}
+        &_right { right: 4em;}
+        &-img { 
+            width: 35px;
+            height: 35px;
+            filter: invert(100%);
+            &-left  { margin-right: 5px }
+            &-right { margin-left: 4px  }
+        }
+    }
+}
